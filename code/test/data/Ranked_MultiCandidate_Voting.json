@@ -1,0 +1,88 @@
+{
+  "name": "Ranked_MultiCandidate_Voting",
+  "description": "Ranked multi-candidate elimination voting with 3 sessions.",
+  "votingTypeId": 4,
+  "type": "RankedMultiCandidate",
+  "startTime": 1730000000,
+  "endTime": 1732000000,
+  "quorum": 6,
+  "voteCostType": "same",
+  "lowerLimit": 1,
+  "upperLimit": 500,
+  "repetitionAllowed": true,
+  "candidateCount": 4,
+  "sessionCount": 3,
+
+  "sessions": [
+    {
+      "sessionId": 0,
+      "options": [
+        { "id": 1, "name": "A" },
+        { "id": 2, "name": "B" },
+        { "id": 3, "name": "C" },
+        { "id": 4, "name": "D" }
+      ],
+      "votes": [
+        { "voter": "0x00000000000000000000000000000000000000A1", "optionId": 1, "value": 8 },
+        { "voter": "0x00000000000000000000000000000000000000A2", "optionId": 2, "value": 7 },
+        { "voter": "0x00000000000000000000000000000000000000A3", "optionId": 3, "value": 4 },
+        { "voter": "0x00000000000000000000000000000000000000A4", "optionId": 1, "value": 9 },
+        { "voter": "0x00000000000000000000000000000000000000A5", "optionId": 4, "value": 5 },
+        { "voter": "0x00000000000000000000000000000000000000A6", "optionId": 3, "value": 6 },
+        { "voter": "0x00000000000000000000000000000000000000A7", "optionId": 2, "value": 8 },
+        { "voter": "0x00000000000000000000000000000000000000A8", "optionId": 1, "value": 7 },
+        { "voter": "0x00000000000000000000000000000000000000A9", "optionId": 2, "value": 6 },
+        { "voter": "0x00000000000000000000000000000000000000AA", "optionId": 3, "value": 3 }
+      ]
+    },
+
+    {
+      "sessionId": 1,
+      "options": [
+        { "id": 1, "name": "A" },
+        { "id": 2, "name": "B" },
+        { "id": 3, "name": "C" }
+      ],
+      "votes": [
+        { "voter": "0x00000000000000000000000000000000000000A1", "optionId": 1, "value": 10 },
+        { "voter": "0x00000000000000000000000000000000000000A2", "optionId": 2, "value": 8 },
+        { "voter": "0x00000000000000000000000000000000000000A3", "optionId": 3, "value": 5 },
+        { "voter": "0x00000000000000000000000000000000000000A4", "optionId": 1, "value": 9 },
+        { "voter": "0x00000000000000000000000000000000000000A5", "optionId": 2, "value": 7 },
+        { "voter": "0x00000000000000000000000000000000000000A6", "optionId": 3, "value": 4 },
+        { "voter": "0x00000000000000000000000000000000000000A7", "optionId": 1, "value": 10 },
+        { "voter": "0x00000000000000000000000000000000000000A8", "optionId": 2, "value": 8 },
+        { "voter": "0x00000000000000000000000000000000000000A9", "optionId": 3, "value": 5 },
+        { "voter": "0x00000000000000000000000000000000000000AA", "optionId": 1, "value": 9 }
+      ]
+    },
+
+    {
+      "sessionId": 2,
+      "options": [
+        { "id": 1, "name": "A" },
+        { "id": 2, "name": "B" }
+      ],
+      "votes": [
+        { "voter": "0x00000000000000000000000000000000000000A1", "optionId": 1, "value": 10 },
+        { "voter": "0x00000000000000000000000000000000000000A2", "optionId": 2, "value": 9 },
+        { "voter": "0x00000000000000000000000000000000000000A3", "optionId": 1, "value": 8 },
+        { "voter": "0x00000000000000000000000000000000000000A4", "optionId": 1, "value": 10 },
+        { "voter": "0x00000000000000000000000000000000000000A5", "optionId": 2, "value": 7 },
+        { "voter": "0x00000000000000000000000000000000000000A6", "optionId": 1, "value": 9 },
+        { "voter": "0x00000000000000000000000000000000000000A7", "optionId": 2, "value": 8 },
+        { "voter": "0x00000000000000000000000000000000000000A8", "optionId": 1, "value": 9 },
+        { "voter": "0x00000000000000000000000000000000000000A9", "optionId": 2, "value": 8 },
+        { "voter": "0x00000000000000000000000000000000000000AA", "optionId": 1, "value": 10 }
+      ]
+    }
+  ],
+
+  "expectedOutcome": {
+    "optionWeights": {
+      "1": 56,
+      "2": 41
+    },
+    "winnerOptionId": 1
+  }
+}

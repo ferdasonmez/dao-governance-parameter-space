@@ -1,0 +1,45 @@
+{
+  "name": "Simple_YesNo_Voting",
+  "description": "Basic approval voting simulation with 10 voters",
+  "votingTypeId": 0,
+  "type": "SimpleYesNo",
+  "startTime": 1730000000,
+  "endTime": 1730600000,
+  "quorum": 6,
+  "voteCostType": "one",
+  "lowerLimit": 1,
+  "upperLimit": 500,
+  "repetitionAllowed": true,
+  "candidateCount": 2,
+  "sessionCount": 1,
+
+  "sessions": [
+    {
+      "sessionId": 0,
+      "options": [
+        { "id": 1, "name": "Yes" },
+        { "id": 2, "name": "No" }
+      ],
+      "votes": [
+        { "voter": "0x00000000000000000000000000000000000000A1", "optionId": 1, "value": 1 },
+        { "voter": "0x00000000000000000000000000000000000000A2", "optionId": 1, "value": 1 },
+        { "voter": "0x00000000000000000000000000000000000000A3", "optionId": 2, "value": 1 },
+        { "voter": "0x00000000000000000000000000000000000000A4", "optionId": 1, "value": 1 },
+        { "voter": "0x00000000000000000000000000000000000000A5", "optionId": 1, "value": 1 },
+        { "voter": "0x00000000000000000000000000000000000000A6", "optionId": 2, "value": 1 },
+        { "voter": "0x00000000000000000000000000000000000000A7", "optionId": 1, "value": 1 },
+        { "voter": "0x00000000000000000000000000000000000000A8", "optionId": 1, "value": 1 },
+        { "voter": "0x00000000000000000000000000000000000000A9", "optionId": 2, "value": 1 },
+        { "voter": "0x00000000000000000000000000000000000000AA", "optionId": 1, "value": 1 }
+      ]
+    }
+  ],
+
+  "expectedOutcome": {
+    "optionWeights": {
+      "1": 7,
+      "2": 3
+    },
+    "winnerOptionId": 1
+  }
+}

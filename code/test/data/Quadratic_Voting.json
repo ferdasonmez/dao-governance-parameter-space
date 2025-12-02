@@ -1,0 +1,43 @@
+{
+  "name": "Quadratic_Voting_Single_Candidate",
+  "description": "Quadratic cost approval voting for a single candidate.",
+  "votingTypeId": 4,
+  "type": "QuadraticSingleCandidate",
+  "startTime": 1730000000,
+  "endTime": 1730600000,
+  "quorum": 6,
+  "voteCostType": "quadratic",
+  "lowerLimit": 1,
+  "upperLimit": 500,
+  "repetitionAllowed": true,
+  "candidateCount": 1,
+  "sessionCount": 1,
+
+  "sessions": [
+    {
+      "sessionId": 0,
+      "options": [
+        { "id": 1, "name": "Candidate" }
+      ],
+      "votes": [
+        { "voter": "0x00000000000000000000000000000000000000A1", "optionId": 1, "value": 9 },
+        { "voter": "0x00000000000000000000000000000000000000A2", "optionId": 1, "value": 4 },
+        { "voter": "0x00000000000000000000000000000000000000A3", "optionId": 1, "value": 16 },
+        { "voter": "0x00000000000000000000000000000000000000A4", "optionId": 1, "value": 4 },
+        { "voter": "0x00000000000000000000000000000000000000A5", "optionId": 1, "value": 9 },
+        { "voter": "0x00000000000000000000000000000000000000A6", "optionId": 1, "value": 1 },
+        { "voter": "0x00000000000000000000000000000000000000A7", "optionId": 1, "value": 9 },
+        { "voter": "0x00000000000000000000000000000000000000A8", "optionId": 1, "value": 16 },
+        { "voter": "0x00000000000000000000000000000000000000A9", "optionId": 1, "value": 4 },
+        { "voter": "0x00000000000000000000000000000000000000AA", "optionId": 1, "value": 1 }
+      ]
+    }
+  ],
+
+  "expectedOutcome": {
+    "optionWeights": {
+      "1": 25
+    },
+    "winnerOptionId": 1
+  }
+}

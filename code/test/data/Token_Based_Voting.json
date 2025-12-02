@@ -1,0 +1,44 @@
+{
+  "name": "Token_Based_Approval_Voting",
+  "description": "Single-candidate approval voting where each voter allocates a weight equal to their token amount. No rejection option; direction always implicitly positive.",
+  "votingTypeId": 6,
+  "type": "TokenBasedApproval",
+  "startTime": 1730000000,
+  "endTime": 1730600000,
+  "quorum": 5,
+  "tokenAddress": "0xDeaDDeaDDeaDDeaDDeaDDeaDDeaDDeaDDeaDDeaD",
+  "voteCostType": "free",
+  "lowerLimit": 1,
+  "upperLimit": 500,
+  "repetitionAllowed": false,
+  "candidateCount": 1,
+  "sessionCount": 1,
+
+  "sessions": [
+    {
+      "sessionId": 0,
+      "options": [
+        { "id": 1, "name": "Candidate" }
+      ],
+      "votes": [
+        { "voter": "0x00000000000000000000000000000000000000A1", "value": 60 },
+        { "voter": "0x00000000000000000000000000000000000000A2", "value": 45 },
+        { "voter": "0x00000000000000000000000000000000000000A3", "value": 10 },
+        { "voter": "0x00000000000000000000000000000000000000A4", "value": 80 },
+        { "voter": "0x00000000000000000000000000000000000000A5", "value": 20 },
+        { "voter": "0x00000000000000000000000000000000000000A6", "value": 50 },
+        { "voter": "0x00000000000000000000000000000000000000A7", "value": 100 },
+        { "voter": "0x00000000000000000000000000000000000000A8", "value": 75 },
+        { "voter": "0x00000000000000000000000000000000000000A9", "value": 30 },
+        { "voter": "0x00000000000000000000000000000000000000AA", "value": 40 }
+      ]
+    }
+  ],
+
+  "expectedOutcome": {
+    "optionWeights": {
+      "1": 510
+    },
+    "winnerOptionId": 1
+  }
+}

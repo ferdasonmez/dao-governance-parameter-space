@@ -1,0 +1,45 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+/// @title Generic Voting Contract
+/// @notice Implements multiple voting types (simple, weighted, quadratic, token-based)
+contract GenericVoting {
+    enum VotingType { Simple, Weighted, Quadratic, TokenBased }
+
+    struct Proposal {
+        uint256 id;
+        string description;
+        VotingType votingType;
+        uint256 startTime;
+        uint256 endTime;
+        bool executed;
+        mapping(address => uint256) votes;
+    }
+
+    uint256 public proposalCount;
+    mapping(uint256 => Proposal) public proposals;
+
+    event ProposalCreated(uint256 indexed id, string description, VotingType votingType, uint256 startTime, uint256 endTime);
+    event Voted(uint256 indexed id, address indexed voter, uint256 weight);
+    event Executed(uint256 indexed id, bool success);
+
+    function createProposal(string memory description, VotingType votingType, uint256 startTime, uint256 endTime) external returns (uint256) {
+        proposalCount++;
+        Proposal storage p = proposals[proposalCount];
+        p.id = proposalCount;
+        p.description = description;
+        p.votingType = votingType;
+        p.startTime = startTime;
+        p.endTime = endTime;
+        emit ProposalCreated(p.id, description, votingType, startTime, endTime);
+        return p.id;
+    }
+
+    function vote(uint256 proposalId, uint256 amount) external {
+        Proposal storage p = proposals[proposalId];
+        require(block.timestamp >= p.startTime && block.timestamp <= p.endTime, "Voting closed");
+        p.votes[msg.sender] += amount;
+        emit Voted(proposalId, msg.sender, amount);
+    }
+}
+

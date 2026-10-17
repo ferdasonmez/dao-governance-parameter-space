@@ -1,0 +1,32 @@
+{
+  "scenarioName": "Baldwin's Method (Iterative Ranked Voting)",
+  "description": "Multi-candidate ranked voting using Baldwin's elimination method. Candidates with lowest Borda scores are eliminated iteratively until one remains.",
+  "votingStructure": {
+    "votingStructureId": 5,
+    "name": "BaldwinRanked",
+    "voteCostType": "Free",
+    "tokenAddress": "0x0000000000000000000000000000000000000000",
+    "lowerLimit": 1,
+    "upperLimit": 3,
+    "onlyYes": true,
+    "onlyOnce": true
+  },
+  "proposal": {
+    "description": "Select protocol upgrade candidate via Baldwin's method",
+    "candidateStructure": "Multi",
+    "votingDirection": "ApprovalOnly",
+    "weightScheme": "Equal",
+    "totalSessions": 2,
+    "communityRestriction": "All",
+    "repetition": true
+  },
+  "candidates": ["CandidateA", "CandidateB", "CandidateC"],
+  "votes": [
+    {"voter": "0xVoter1", "ranking": [1, 2, 3]},
+    {"voter": "0xVoter2", "ranking": [2, 1, 3]},
+    {"voter": "0xVoter3", "ranking": [1, 3, 2]},
+    {"voter": "0xVoter4", "ranking": [3, 2, 1]},
+    {"voter": "0xVoter5", "ranking": [2, 3, 1]}
+  ],
+  "expectedWinner": "CandidateA"
+}

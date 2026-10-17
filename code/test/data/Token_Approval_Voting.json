@@ -1,0 +1,31 @@
+{
+  "scenarioName": "Token Approval Voting",
+  "description": "Dynamic candidate structure with token-based approval voting. Voters approve or reject candidates; vote weight is proportional to token holdings.",
+  "votingStructure": {
+    "votingStructureId": 6,
+    "name": "TokenApproval",
+    "voteCostType": "Free",
+    "tokenAddress": "0x0000000000000000000000000000000000000000",
+    "lowerLimit": 0,
+    "upperLimit": 1,
+    "onlyYes": false,
+    "onlyOnce": true
+  },
+  "proposal": {
+    "description": "Approve or reject treasury allocation proposal",
+    "candidateStructure": "Dynamic",
+    "votingDirection": "ApprovalOnly",
+    "weightScheme": "Equal",
+    "totalSessions": 1,
+    "communityRestriction": "All",
+    "repetition": true
+  },
+  "votes": [
+    {"voter": "0xVoter1", "approve": true,  "tokenBalance": 1000},
+    {"voter": "0xVoter2", "approve": true,  "tokenBalance": 500},
+    {"voter": "0xVoter3", "approve": false, "tokenBalance": 300},
+    {"voter": "0xVoter4", "approve": true,  "tokenBalance": 200},
+    {"voter": "0xVoter5", "approve": false, "tokenBalance": 100}
+  ],
+  "expectedOutcome": "Approved"
+}
